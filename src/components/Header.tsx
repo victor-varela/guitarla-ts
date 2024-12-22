@@ -1,6 +1,23 @@
-import React from "react";
+import { CartItem, Guitar } from "../types";
 
-const Header = ({ cart, removeFromCart, increaseElements, decreaseElements, clearCart, isEmpty, cartTotal }) => {
+type HeaderProps ={
+  cart : CartItem[]
+  removeFromCart : (id: Guitar["id"]) => void
+  increaseElements : (id: Guitar["id"]) => void
+  decreaseElements : (id: Guitar["id"]) => void
+  clearCart : ()=> void
+  isEmpty : boolean
+  cartTotal: number
+}
+
+const Header = ({ 
+  cart, 
+  removeFromCart, 
+  increaseElements, 
+  decreaseElements, 
+  clearCart, 
+  isEmpty, 
+  cartTotal }: HeaderProps) => {
  
   return (
     <header className="py-5 header">
